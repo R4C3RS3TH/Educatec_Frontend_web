@@ -1,4 +1,4 @@
-import { Carrera } from 'src/types/carrera';
+import { Carrera } from 'src/types/Carrera';
 import { Roles } from 'src/types/Roles';
 
 export interface UserResponse {
