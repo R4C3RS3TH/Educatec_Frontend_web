@@ -1,5 +1,5 @@
 import React from "react";
-import { AcademiaResponse } from "src/interfaces/academia/AcademiaResponse";
+import { AcademiaResponse } from "@interfaces/academia/AcademiaResponse";
 import { Link } from "react-router-dom";
 
 interface AcademiaCardProps {

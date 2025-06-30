@@ -1,5 +1,5 @@
 import React from "react";
-import { Modalidad } from "src/types/Modalidad";
+import { Modalidad } from "@mappings/Modalidad";
 import { Link } from "react-router-dom";
 
 interface ColeccionCardProps {

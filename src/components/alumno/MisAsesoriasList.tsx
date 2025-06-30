@@ -1,5 +1,5 @@
 import React from "react";
-import { ColeccionAsesoriasResponse } from "src/interfaces/coleccionAsesorias/CAsesoriasResponse";
+import { ColeccionAsesoriasResponse } from "@interfaces/coleccionAsesorias/CAsesoriasResponse";
 import { Link } from "react-router-dom";
 
 interface MisAsesoriasListProps {

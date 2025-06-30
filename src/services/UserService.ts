@@ -1,4 +1,4 @@
-import Api from '../services/api';
+import Api from '@services/api';
 import { UserResponse } from '@interfaces/user/UserResponse';
 import { UserPatch } from '@interfaces/user/UserPatch';
 

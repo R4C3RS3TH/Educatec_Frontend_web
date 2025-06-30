@@ -1,4 +1,4 @@
-import Api from '../services/api';
+import Api from '@services/api';
 import { AlumnoPatch } from '@interfaces/alumno/AlumnoPatch';
 import { AlumnoResponse } from '@interfaces/alumno/AlumnoResponse';
 

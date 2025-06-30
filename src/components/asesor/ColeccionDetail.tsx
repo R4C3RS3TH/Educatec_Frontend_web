@@ -1,5 +1,5 @@
 import React from "react";
-import type { Modalidad } from "src/types/Modalidad";
+import type { Modalidad } from "@mappings/Modalidad";
 
 interface ColeccionDetailProps {
   nombre: string;

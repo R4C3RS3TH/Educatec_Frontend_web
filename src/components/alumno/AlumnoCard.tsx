@@ -1,6 +1,6 @@
 import React from "react";
-import { AlumnoResponse } from "src/interfaces/alumno/AlumnoResponse";
-import { CarreraDisplayMap } from "src/types/CarreraDisplayMap";
+import { AlumnoResponse } from "@interfaces/alumno/AlumnoResponse";
+import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 import { Link } from "react-router-dom";
 
 interface AlumnoCardProps {

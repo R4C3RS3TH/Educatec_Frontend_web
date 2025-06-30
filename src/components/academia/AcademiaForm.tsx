@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../ui/button";
-import { Input } from "../ui/Input";
-import { AcademiaRequest } from "src/interfaces/academia/AcademiaRequest";
-import { createAcademia, updateAcademia } from "src/services/AcademiaService";
+import { Button } from "@components/ui/Button";
+import { Input } from "@components/ui/Input";
+import { AcademiaRequest } from "@interfaces/academia/AcademiaRequest";
+import { createAcademia, updateAcademia } from "@services/AcademiaService";
 
 interface AcademiaFormProps {
   initialData?: AcademiaRequest;

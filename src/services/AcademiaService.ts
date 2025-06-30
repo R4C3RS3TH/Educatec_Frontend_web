@@ -1,4 +1,4 @@
-import Api from '../services/api';
+import Api from '@services/api';
 import { AcademiaRequest } from '@interfaces/academia/AcademiaRequest';
 import { AcademiaResponse } from '@interfaces/academia/AcademiaResponse';
 import { AcademiaPatch } from '@interfaces/academia/AcademiaPatch';

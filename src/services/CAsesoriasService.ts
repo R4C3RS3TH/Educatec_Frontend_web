@@ -1,7 +1,7 @@
-import Api from '../services/api';
-import { ColeccionAsesoriasRequest } from '../interfaces/coleccionAsesorias/CAsesoriasRequest';
-import { ColeccionAsesoriasResponse } from '../interfaces/coleccionAsesorias/CAsesoriasResponse';
-import { PageResponse } from '../interfaces/common/PageResponse';
+import Api from '@services/api';
+import { ColeccionAsesoriasRequest } from '@interfaces/coleccionAsesorias/CAsesoriasRequest';
+import { ColeccionAsesoriasResponse } from '@interfaces/coleccionAsesorias/CAsesoriasResponse';
+import { PageResponse } from '@interfaces/common/PageResponse';
 
 export const getAllColecciones = async (): Promise<ColeccionAsesoriasResponse[]> => {
   const api = await Api.getInstance();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modalidad } from "src/types/Modalidad";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/button";
+import { Input } from "@components/ui/Input";
+import { Button } from "@components/ui/Button";
 
 interface ColeccionFormProps {
   initialValues?: {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "../ui/button";
-import { Input } from "../ui/Input";
+import { Button } from "@components/ui/Button";
+import { Input } from "@components/ui/Input";
 
 interface AcademiaRolesManagerProps {
   onAddLider: (email: string) => void;
