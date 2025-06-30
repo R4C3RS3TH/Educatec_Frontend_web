@@ -2,27 +2,8 @@ import { useAuthContext } from "@contexts/AuthContext";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Carrera } from "src/types/Carrera";
+import { CarreraDisplayMap } from "src/types/CarreraDisplayMap";
 
-// Mapeo para mostrar los nombres de las carreras en texto legible
-const CarreraDisplayMap: Record<Carrera, string> = {
-    INGENIERIA_QUIMICA: "Ingeniería Química",
-    INGENIERIA_MECANICA: "Ingeniería Mecánica",
-    INGENIERIA_ELECTRICA: "Ingeniería Eléctrica",
-    INGENIERIA_ENERGIA: "Ingeniería de Energía",
-    INGENIERIA_MECATRONICA: "Ingeniería Mecatrónica",
-    BIOINGENIERIA: "Bioingeniería",
-    INGENIERA_INDUSTRIAL: "Ingeniería Industrial",
-    INGENIERIA_AMBIENTAL: "Ingeniería Ambiental",
-    INGENIERIA_CIVIL: "Ingeniería Civil",
-    SISTEMAS_DE_INFORMACION: "Sistemas de Información",
-    COMPUTER_SCIENCE: "Ciencias de la Computación",
-    DATA_SCIENCE: "Ciencia de Datos",
-    CIBERSEGURIDAD: "Ciberseguridad",
-    ADMINISTRACION_Y_NEGOCIOS_DIGITALES: "Administración y Negocios Digitales",
-    ADMINISTRACION_Y_NEGOCIOS_SOSTENIBLES: "Administración y Negocios Sostenibles",
-    BUSINESS_ANALYTICS: "Business Analytics",
-};
 
 export default function RegisterForm() {
     const { register } = useAuthContext();
@@ -32,7 +13,7 @@ export default function RegisterForm() {
         correo: "",
         password: "",
         nombre: "",
-        carrera: "SISTEMAS_DE_INFORMACION", // Valor por defecto válido
+        carrera: "SISTEMAS_DE_INFORMACION",
     });
 
     function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
