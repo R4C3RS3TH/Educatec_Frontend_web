@@ -3,11 +3,11 @@ import { LoginRequest } from "@interfaces/auth/LoginRequest";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
 import Api from "@services/api";
 import { login } from "@services/auth/login";
-import { register } from "@services/auth/register";
+import { RegisterAsesor,RegisterAlumno } from "@services/auth/register";
 import { createContext, ReactNode, useContext } from "react";
 
 interface AuthContextType {
-	register: (SignupRequest: RegisterRequest) => Promise<void>;
+	register: (signupRequest: RegisterRequest, role: "alumno" | "asesor") => Promise<void>;
 	login: (loginRequest: LoginRequest) => Promise<void>;
 	logout: () => void;
 	session?: string | null;
@@ -25,11 +25,15 @@ async function loginHandler(
 }
 
 async function signupHandler(
-	signupRequest: RegisterRequest,
-	setSession: (value: string) => void,
+  signupRequest: RegisterRequest,
+  role: "alumno" | "asesor",
+  setSession: (value: string) => void
 ) {
-	const response = await register(signupRequest);
-	setSession(response.data.token);
+  const response =
+    role === "asesor"
+      ? await RegisterAsesor(signupRequest)
+      : await RegisterAlumno(signupRequest);
+  setSession(response.data.token);
 }
 
 export function AuthProvider(props: { children: ReactNode }) {
@@ -43,7 +47,7 @@ export function AuthProvider(props: { children: ReactNode }) {
 	return (
 		<AuthContext.Provider
 			value={{
-				register: (signupRequest) => signupHandler(signupRequest, setSession),
+				register: (signupRequest, role) =>signupHandler(signupRequest, role, setSession),
 				login: (loginRequest) => loginHandler(loginRequest, setSession),
 				logout: () => {
 					setSession(null);
