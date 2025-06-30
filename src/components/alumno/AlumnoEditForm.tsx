@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { AlumnoPatch } from "src/interfaces/alumno/AlumnoPatch";
-import { Carrera } from "src/types/Carrera";
-import { CarreraDisplayMap } from "src/types/CarreraDisplayMap";
+import { AlumnoPatch } from "@interfaces/alumno/AlumnoPatch";
+import { Carrera } from "@mappings/Carrera";
+import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 
 interface AlumnoEditFormProps {
   initialData: AlumnoPatch;

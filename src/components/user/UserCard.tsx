@@ -1,8 +1,8 @@
 import React from 'react';
-import { Carrera } from 'src/types/Carrera';
-import { Roles } from 'src/types/Roles';
-import { cn } from 'src/utils/cn'; 
-import { Badge } from '../ui/badge';
+import { Carrera } from '@mappings/Carrera';
+import { Roles } from '@mappings/Roles';
+import { cn } from '@utils/cn'; 
+import { Badge } from '@components/ui/Badge';
 
 export interface UserCardProps {
   nombre: string;

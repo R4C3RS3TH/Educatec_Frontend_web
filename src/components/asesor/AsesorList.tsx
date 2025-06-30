@@ -1,5 +1,5 @@
 import React from "react";
-import { AsesorResponse } from "src/interfaces/asesor/AsesorResponse";
+import { AsesorResponse } from "@interfaces/asesor/AsesorResponse";
 import { Link } from "react-router-dom";
 
 interface AsesorListProps {

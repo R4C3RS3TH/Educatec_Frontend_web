@@ -2,7 +2,7 @@ import { useAuthContext } from "@contexts/AuthContext";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CarreraDisplayMap } from "src/types/CarreraDisplayMap";
+import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 
 
 export default function RegisterForm() {

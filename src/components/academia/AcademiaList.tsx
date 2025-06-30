@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AcademiaResponse } from "src/interfaces/academia/AcademiaResponse";
+import { AcademiaResponse } from "@interfaces/academia/AcademiaResponse";
 
 interface Props {
   academias: AcademiaResponse[];

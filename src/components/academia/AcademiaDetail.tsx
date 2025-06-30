@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AcademiaResponse } from "src/interfaces/academia/AcademiaResponse";
-import { getAcademiaByNombre } from "src/services/AcademiaService";
-import { Button } from "../ui/button";
+import { AcademiaResponse } from "@interfaces/academia/AcademiaResponse";
+import { getAcademiaByNombre } from "@services/AcademiaService";
+import { Button } from "@components/ui/Button";
 
 export const AcademiaDetail = () => {
   const { nombre } = useParams<{ nombre: string }>();

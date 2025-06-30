@@ -5,7 +5,11 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "baseUrl": ".",
+    "types": ["node"],
     "paths": {
+      "@app": [
+        "src/App"
+      ],
       "@router/*": [
         "src/router/*"
       ],
@@ -33,6 +37,12 @@
       "@hooks/*": [
         "src/hooks/*"
       ],
+      "@mappings/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
     }
   },
   "references": [

@@ -1,8 +1,8 @@
 import { useState, FormEvent } from "react";
-import { Carrera } from "src/types/Carrera";
-import { CarreraDisplayMap } from "src/types/CarreraDisplayMap";
-import { UserPatch } from "src/interfaces/user/UserPatch";
-import { Button } from "../ui/button";
+import { Carrera } from "@mappings/Carrera";
+import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
+import { UserPatch } from "@interfaces/user/UserPatch";
+import { Button } from "@components/ui/Button";
 
 interface Props {
   defaultValues?: UserPatch;
