@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 import { Carrera } from "@mappings/Carrera";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
+// hay un error los register se estan ahciendo todos de asesores no de alumnos
 
 export default function RegisterForm() {
   const { register } = useAuthContext();
@@ -41,7 +42,6 @@ export default function RegisterForm() {
       role === "alumno"
         ? { ...basePayload, ciclo: ciclo }
         : { ...basePayload, rating: 0, etiquetas: [] };
-
     await register(payload, role);
     navigate("/dashboard");
   }
@@ -51,10 +51,14 @@ export default function RegisterForm() {
       <h1 className="text-2xl font-bold mb-4">Registrarse a Educatec</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="role"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Rol
           </label>
           <select
+            name="role"
             id="role"
             value={role}
             onChange={(e) => setRole(e.target.value as "alumno" | "asesor")}
@@ -66,7 +70,10 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label htmlFor="correo" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="correo"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Correo
           </label>
           <input
@@ -81,7 +88,10 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Contraseña
           </label>
           <input
@@ -98,7 +108,10 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="nombre"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Nombre completo
           </label>
           <input
@@ -113,7 +126,10 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label htmlFor="carrera" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="carrera"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Carrera
           </label>
           <select
@@ -134,7 +150,10 @@ export default function RegisterForm() {
 
         {role === "alumno" && (
           <div>
-            <label htmlFor="ciclo" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="ciclo"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Ciclo
             </label>
             <input

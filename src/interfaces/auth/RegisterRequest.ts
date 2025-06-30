@@ -1,8 +1,7 @@
-import { Carrera } from 'src/types/Carrera';
-export interface RegisterRequest {
-  password: string; 
-  correo: string;   
-  nombre: string;
-  carrera: Carrera;
-}
+
+import { AlumnoCreateRequest } from "@interfaces/alumno/AlumnoCreateRequest";
+import { AsesorCreateRequest } from "@interfaces/asesor/AsesorCreateRequest";
+
+
+export type RegisterRequest = AlumnoCreateRequest | AsesorCreateRequest;
 
