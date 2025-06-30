@@ -9,8 +9,8 @@ export default function NotFoundPage() {
       <section className="text-center">
         <h1 className="text-6xl font-bold text-blue-700 mb-4">404</h1>
         <p className="text-xl text-gray-700 mb-6">Página no encontrada</p>
-        <Button onClick={() => navigate("/")} variant="primary">
-          Volver al inicio
+        <Button onClick={() => navigate(-1)} variant="primary">
+          Volver a la página anterior
         </Button>
       </section>
     </main>
