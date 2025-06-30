@@ -7,7 +7,7 @@ export default function LoginForm() {
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState<LoginRequest>({
-        correo: "",
+        email: "",
         password: ""
     });
     const { login } = useAuthContext();
@@ -37,15 +37,15 @@ export default function LoginForm() {
 
     return (
         <section className="login-section bg-secondary rounded-2xl p-8 w-full shadow-md flex flex-col items-center px-20">
-            <h1 className="title mb-10">Ingresar a Uber</h1>
+            <h1 className="title mb-10">Ingresar a Educatec</h1>
             <form onSubmit={handleSubmit} className="flex flex-col items-center w-full gap-8" >
                 <div className="w-full">
-                    <label htmlFor="correo" className="block text-sm font-medium text-gray-700 mb-1">Correo</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Correo</label>
                     <input
                         type="email"
-                        name="correo"
-                        id="correo"
-                        value={formData.correo}
+                        name="email"
+                        id="email"
+                        value={formData.email}
                         onChange={handleChange}
                         required
                         className="w-full border border-gray-600 rounded-md p-2 bg-transparent"
@@ -75,11 +75,11 @@ export default function LoginForm() {
             </div>
 
             <button
-                id="LoginGoogle"
+                id="registerButton"
                 className="bg-white text-black w-full flex justify-center items-center gap-4 mx-6 py-2 px-4 rounded-lg cursor-pointer shadow-sm"
-                onClick={() => { alert("WAZAAAA ALERT :bbbb") }}
+                onClick={() => navigate("/auth/register")}
             >
-                Ingresar con Google
+                Registrarse
             </button>
 
             {error && <div className="text-red-600 mt-4">{error}</div>}
