@@ -4,11 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 import { Carrera } from "@mappings/Carrera";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
-<<<<<<< Updated upstream
-
-=======
 import { FiMail, FiLock, FiUser, FiBookOpen, FiLayers } from "react-icons/fi";
->>>>>>> Stashed changes
 
 export default function RegisterForm() {
   const { register } = useAuthContext();
