@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 import { Carrera } from "@mappings/Carrera";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
+<<<<<<< Updated upstream
 
+=======
+import { FiMail, FiLock, FiUser, FiBookOpen, FiLayers } from "react-icons/fi";
+>>>>>>> Stashed changes
 
 export default function RegisterForm() {
   const { register } = useAuthContext();
@@ -19,8 +23,7 @@ export default function RegisterForm() {
     carrera: "SISTEMAS_DE_INFORMACION" as Carrera,
   });
 
-  const [ciclo, setCiclo] = useState<number>(1); // Alumno
-  // Asesor no necesita campos que se llenen: rating y etiquetas se envían por defecto
+  const [ciclo, setCiclo] = useState<number>(1);
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
@@ -42,21 +45,17 @@ export default function RegisterForm() {
       role === "alumno"
         ? { ...basePayload, ciclo: ciclo }
         : { ...basePayload, rating: 0, etiquetas: [] };
+
     await register(payload, role);
     navigate("/dashboard");
   }
 
   return (
-    <section className="home-section rounded-2xl p-8 w-full max-w-xl shadow-md">
-      <h1 className="text-2xl font-bold mb-4">Registrarse a Educatec</h1>
+    <section className="home-section bg-white rounded-2xl p-8 w-full max-w-xl shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Rol */}
         <div>
-          <label
-            htmlFor="role"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Rol
-          </label>
+          <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">Rol</label>
           <select
             name="role"
             id="role"
@@ -69,75 +68,62 @@ export default function RegisterForm() {
           </select>
         </div>
 
-        <div>
-          <label
-            htmlFor="correo"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Correo
-          </label>
+        {/* Correo */}
+        <div className="w-full relative">
+          <FiMail className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
           <input
             type="email"
             name="correo"
             id="correo"
+            placeholder="Correo electrónico"
             value={formData.correo}
             onChange={handleChange}
-            className="w-full border border-gray-600 bg-transparent rounded-md p-2"
+            className="w-full pl-10 border border-gray-600 rounded-md p-2 bg-transparent"
             required
           />
         </div>
 
-        <div>
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Contraseña
-          </label>
+        {/* Contraseña */}
+        <div className="w-full relative">
+          <FiLock className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
           <input
             type="password"
             name="password"
             id="password"
+            placeholder="Contraseña"
             value={formData.password}
             onChange={handleChange}
-            className="w-full border border-gray-600 bg-transparent rounded-md p-2"
+            className="w-full pl-10 border border-gray-600 rounded-md p-2 bg-transparent"
             minLength={8}
             maxLength={20}
             required
           />
         </div>
 
-        <div>
-          <label
-            htmlFor="nombre"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Nombre completo
-          </label>
+        {/* Nombre */}
+        <div className="w-full relative">
+          <FiUser className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
           <input
             type="text"
             name="nombre"
             id="nombre"
+            placeholder="Nombre completo"
             value={formData.nombre}
             onChange={handleChange}
-            className="w-full border border-gray-600 bg-transparent rounded-md p-2"
+            className="w-full pl-10 border border-gray-600 rounded-md p-2 bg-transparent"
             required
           />
         </div>
 
-        <div>
-          <label
-            htmlFor="carrera"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Carrera
-          </label>
+        {/* Carrera */}
+        <div className="w-full relative">
+          <FiBookOpen className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
           <select
             name="carrera"
             id="carrera"
             value={formData.carrera}
             onChange={handleChange}
-            className="w-full border border-gray-600 bg-transparent rounded-md p-2"
+            className="w-full pl-10 border border-gray-600 rounded-md p-2 bg-transparent"
             required
           >
             {Object.entries(CarreraDisplayMap).map(([value, label]) => (
@@ -148,42 +134,45 @@ export default function RegisterForm() {
           </select>
         </div>
 
+        {/* Ciclo */}
         {role === "alumno" && (
-          <div>
-            <label
-              htmlFor="ciclo"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Ciclo
-            </label>
-            <input
-              type="number"
-              id="ciclo"
-              value={ciclo}
-              onChange={(e) => setCiclo(Number(e.target.value))}
-              className="w-full border border-gray-600 bg-transparent rounded-md p-2"
-              min={1}
-              max={20}
-              required
-            />
+          <div className="w-full">
+            <div className="relative">
+              <FiLayers className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
+              <input
+                type="number"
+                id="ciclo"
+                placeholder="Ej. 3"
+                value={ciclo}
+                onChange={(e) => setCiclo(Number(e.target.value))}
+                className="w-full pl-10 border border-gray-600 rounded-md p-2 bg-transparent"
+                min={1}
+                max={10}
+                required
+              />
+            </div>
+            <p className="text-sm text-gray-500 mt-1 ml-1">Ingresa tu ciclo entre 1 y 10</p>
           </div>
         )}
 
-        <button
-          id="registerSubmit"
-          className="bg-primary text-white font-bold mx-6 py-2 px-4 rounded-full cursor-pointer"
-          type="submit"
-        >
-          Registrarse
-        </button>
-        <button
-          id="loginButton"
-          className="bg-white text-black w-full flex justify-center items-center gap-4 mx-6 py-2 px-4 rounded-lg cursor-pointer shadow-sm"
-          type="button"
-          onClick={() => navigate("/auth/login")}
-        >
-          ingresar
-        </button>
+        {/* Botones */}
+        <div className="flex flex-col md:flex-row gap-4 mt-6">
+          <button
+            id="registerSubmit"
+            className="bg-blue-600 text-white font-bold w-full py-2 px-4 rounded-full hover:bg-blue-700 transition"
+            type="submit"
+          >
+            Registrar
+          </button>
+          <button
+            id="backButton"
+            className="bg-white border border-gray-400 text-black w-full py-2 px-4 rounded-full hover:bg-gray-100 transition"
+            type="button"
+            onClick={() => navigate(-1)}
+          >
+            Volver
+          </button>
+        </div>
       </form>
     </section>
   );
