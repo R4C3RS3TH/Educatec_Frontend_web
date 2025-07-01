@@ -29,10 +29,12 @@ export default class Api {
         return this._instance;
     }
 
-    public async request<RequestType, ResponseType>(config: AxiosRequestConfig) {
+    public async request<RequestType, ResponseType>(config: AxiosRequestConfig & { skipAuth?: boolean }) {
         const headers: RawAxiosRequestHeaders = {
             "Content-Type": "application/json",
-            Authorization: this._authorization ? `Bearer ${this._authorization}` : "",
+            ...(config.skipAuth
+                ? {}
+                : { Authorization: this._authorization ? `Bearer ${this._authorization}` : "",}),
         };
 
         const configOptions: AxiosRequestConfig = {
@@ -57,7 +59,7 @@ export default class Api {
 
     public post<RequestBodyType, ResponseBodyType>(
         data: RequestBodyType,
-        options: AxiosRequestConfig,
+        options: AxiosRequestConfig & { skipAuth?: boolean; }
     ) {
         const configOptions: AxiosRequestConfig = {
             ...options,
