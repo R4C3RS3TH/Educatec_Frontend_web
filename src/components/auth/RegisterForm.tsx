@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 import { Carrera } from "@mappings/Carrera";
 import { RegisterRequest } from "@interfaces/auth/RegisterRequest";
-// hay un error los register se estan ahciendo todos de asesores no de alumnos
+
 
 export default function RegisterForm() {
   const { register } = useAuthContext();

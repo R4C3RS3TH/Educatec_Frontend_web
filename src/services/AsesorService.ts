@@ -12,6 +12,14 @@ export const getAllAsesores = async (): Promise<AsesorResponse[]> => {
   return data;
 };
 
+export const getMiPerfilAsesor = async (): Promise<AsesorResponse> => {
+  const api = await Api.getInstance();
+  const { data } = await api.get<null, AsesorResponse>({
+    url: "/asesores/me",
+  });
+  return data;
+};
+
 export const getAsesorById = async (codigo: string): Promise<AsesorResponse> => {
   const api = await Api.getInstance();
   const { data } = await api.get<null, AsesorResponse>({
