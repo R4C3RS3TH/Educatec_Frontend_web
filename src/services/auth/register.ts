@@ -8,6 +8,7 @@ export async function RegisterAsesor(registerRequest: RegisterRequest) {
         registerRequest,
         {
             url: "/auth/register/asesor",
+            skipAuth: true,
         });
     api.authorization = response.data.token;
     return response;
@@ -18,6 +19,7 @@ export async function RegisterAlumno(registerRequest: RegisterRequest) {
         registerRequest,
         {
             url: "/auth/register/student",
+            skipAuth: true,
         });
     api.authorization = response.data.token;
     return response;
