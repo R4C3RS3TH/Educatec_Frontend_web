@@ -34,12 +34,6 @@ export default function UserDetail() {
 
             <div className="flex gap-4 mt-6">
                 <button
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                    onClick={() => navigate(`/admin/usuarios/${user.codigo}/editar`)}
-                >
-                    Editar Usuario
-                </button>
-                <button
                     className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500"
                     onClick={() => navigate("/admin/usuarios")}
                 >

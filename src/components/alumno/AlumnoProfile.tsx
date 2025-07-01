@@ -1,4 +1,3 @@
-import React from "react";
 import { AlumnoResponse } from "@interfaces/alumno/AlumnoResponse";
 import { CarreraDisplayMap } from "@mappings/CarreraDisplayMap";
 
@@ -6,7 +5,7 @@ interface AlumnoProfileProps {
   alumno: AlumnoResponse;
 }
 
-export const AlumnoProfile: React.FC<AlumnoProfileProps> = ({ alumno }) => {
+export default function AlumnoProfile({ alumno }: AlumnoProfileProps) {
   return (
     <div className="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow space-y-4">
       <h2 className="text-2xl font-bold text-primary text-center">Perfil del Alumno</h2>
@@ -45,4 +44,4 @@ export const AlumnoProfile: React.FC<AlumnoProfileProps> = ({ alumno }) => {
       </div>
     </div>
   );
-};
+}

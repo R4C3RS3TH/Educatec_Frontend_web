@@ -37,9 +37,18 @@ export const updateUser = async (
   return data;
 };
 
+export const getMe = async (): Promise<UserResponse> => {
+  const api = await Api.getInstance();
+  const { data } = await api.get<null, UserResponse>({
+    url: "/users/me",
+  });
+  return data;
+};
+
 export const deleteUser = async (codigo: string): Promise<void> => {
   const api = await Api.getInstance();
   await api.delete({
     url: `/users/${codigo}`
   });
+
 };
